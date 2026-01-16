@@ -1,155 +1,81 @@
 import React from 'react';
-import '../index.css';
+import { motion } from 'framer-motion';
+import { ExternalLink, Github, Server, Code, Zap } from 'lucide-react';
+
+const projects = [
+  {
+    category: "Hackathons & Prototypes",
+    title: "AI-Powered Documentation Assistant",
+    context: "24-hour University Hackathon",
+    desc: "Built a RAG-based chatbot to query internal technical documentation instanly.",
+    stack: ["Python", "LangChain", "OpenAI", "React"],
+    outcome: "First Place Winner; Demoed to 200+ attendees."
+  },
+  {
+    category: "Infrastructure & Systems",
+    title: "Secure VPS Automation Pipeline",
+    context: "Internal Tooling",
+    desc: "Automated the provisioning and hardening of Linux VPS instances for staging environments.",
+    stack: ["Bash", "Docker", "Ansible", "Linux"],
+    outcome: "Reduced deployment time from 2 hours to 10 minutes."
+  },
+  {
+    category: "Web Platforms",
+    title: "Community Event Dashboard",
+    context: "Client Project",
+    desc: "Full-stack event management platform handling registrations and ticketing.",
+    stack: ["Next.js", "PostgreSQL", "Tailwind CSS"],
+    outcome: "Deployed to production; handled 500+ users securely."
+  },
+  {
+    category: "Experiments & Demos",
+    title: "Real-time Data Visualizer",
+    context: "Technical Exploration",
+    desc: "High-performance dashboard for visualizing socket stream data.",
+    stack: ["React", "WebSockets", "D3.js"],
+    outcome: "Open-sourced implementation."
+  }
+];
 
 const Projects = () => {
-    const projects = [
-        {
-            title: 'E-Commerce Dashboard',
-            description: 'A comprehensive dashboard for managing online stores with real-time analytics.',
-            tags: ['React', 'D3.js', 'Node.js'],
-            link: '#',
-            image: 'https://placehold.co/600x400/1a1a1a/FFF?text=Dashboard'
-        },
-        {
-            title: 'Social Media App',
-            description: 'Full-stack social platform with real-time messaging and media sharing.',
-            tags: ['Next.js', 'Tailwind', 'Firebase'],
-            link: '#',
-            image: 'https://placehold.co/600x400/1a1a1a/FFF?text=Social+App'
-        },
-        {
-            title: 'AI Content Generator',
-            description: 'SaaS application leveraging LLMs to help efficient content creation.',
-            tags: ['Python', 'FastAPI', 'React'],
-            link: '#',
-            image: 'https://placehold.co/600x400/1a1a1a/FFF?text=AI+Tool'
-        }
-    ];
+  return (
+    <section id="projects" className="py-20 px-6 max-w-4xl mx-auto border-t border-slate-800/50">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-sm font-mono text-emerald-400 mb-12 uppercase tracking-widest">Selected Projects</h2>
 
-    return (
-        <section id="projects" className="section projects">
-            <div className="container">
-                <h2 className="section-title gradient-text">Featured Work</h2>
-                <div className="projects-grid">
-                    {projects.map((project, index) => (
-                        <div key={index} className="project-card glass">
-                            <div className="project-image">
-                                <img src={project.image} alt={project.title} />
-                                <div className="overlay">
-                                    <a href={project.link} className="btn btn-primary">View Project</a>
-                                </div>
-                            </div>
-                            <div className="project-content">
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                                <div className="tags">
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="tag">{tag}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <div key={index} className="bg-slate-800/20 border border-slate-800 p-6 rounded-lg hover:border-slate-600 transition-colors group">
+              <div className="text-xs font-mono text-slate-500 mb-2">{project.category}</div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                {project.desc}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.stack.map(tech => (
+                  <span key={tech} className="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="text-xs text-slate-500 border-t border-slate-800/50 pt-3">
+                <span className="font-semibold text-slate-400">Outcome:</span> {project.outcome}
+              </div>
             </div>
-
-            <style jsx>{`
-        .section {
-          padding: 100px 0;
-        }
-
-        .section-title {
-          font-size: 2.5rem;
-          font-weight: 800;
-          margin-bottom: 3rem;
-          text-align: center;
-        }
-
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-        }
-
-        .project-card {
-          border-radius: 12px;
-          overflow: hidden;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 10px 30px -10px rgba(109, 40, 217, 0.3);
-        }
-
-        .project-image {
-          position: relative;
-          height: 200px;
-          overflow: hidden;
-        }
-
-        .project-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-image img {
-          transform: scale(1.1);
-        }
-
-        .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.7);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .project-card:hover .overlay {
-          opacity: 1;
-        }
-
-        .project-content {
-          padding: 1.5rem;
-        }
-
-        .project-content h3 {
-          font-size: 1.25rem;
-          margin-bottom: 0.5rem;
-          color: var(--text-primary);
-        }
-
-        .project-content p {
-          color: var(--text-secondary);
-          font-size: 0.95rem;
-          margin-bottom: 1rem;
-        }
-
-        .tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-
-        .tag {
-          font-size: 0.8rem;
-          padding: 0.25rem 0.75rem;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: var(--text-secondary);
-        }
-      `}</style>
-        </section>
-    );
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
 };
 
 export default Projects;
