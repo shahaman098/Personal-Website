@@ -13,10 +13,10 @@ const About = () => {
         <h2 className="text-sm font-mono text-emerald-400 mb-8 uppercase tracking-widest">About</h2>
         <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
           <p>
-            I work on production-grade web and cloud systems, with experience spanning VPS management, security hardening, automation, and rapid prototyping. My work includes maintaining live organisational platforms, building hackathon demos, and collaborating with technical and non-technical stakeholders.
+            I approach engineering with a systems-first mindset, focusing on security, maintainability, and reliability in every build. My experience spans managing live production environments, hardening Linux infrastructure, and automating deployment pipelines.
           </p>
           <p>
-            I focus on simple, reliable architectures that solve real problems. Whether it's deploying a secured containerized environment or shipping a frontend prototype in 24 hours, I prioritize execution and maintainability over theoretical perfection.
+            I believe in learning by shipping. Whether it's a 24-hour hackathon prototype or a long-term enterprise platform, I prioritize delivering functional code that solves immediate problems under real-world constraints.
           </p>
         </div>
       </motion.div>

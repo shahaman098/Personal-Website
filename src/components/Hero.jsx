@@ -11,18 +11,36 @@ const Hero = () => {
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
-          Kris
+          Kris (Aman Kumar Sah)
         </h1>
         <h2 className="text-2xl md:text-3xl font-medium text-slate-400 mb-6">
           Cloud & Systems Engineer
         </h2>
         <p className="text-xl text-slate-400 max-w-2xl mb-8 leading-relaxed">
           Building secure, scalable digital systems and rapid technical prototypes.
-          <br />
-          <span className="text-slate-500 text-base mt-2 block">
-            Cloud • Web Systems • Automation • Security • Hackathons
-          </span>
         </p>
+
+        <div className="mb-10 p-5 bg-slate-800/40 border-l-4 border-emerald-500 rounded-r-md">
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Recruiter Snapshot</h3>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-300 text-sm">
+            <li className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+              Hands-on cloud & web systems experience
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+              Placement experience maintaining live platforms
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+              Hackathon experience with shipped demos
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+              Focus on security, reliability, and automation
+            </li>
+          </ul>
+        </div>
 
         <div className="flex gap-4">
           <a

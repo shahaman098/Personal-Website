@@ -18,20 +18,20 @@ const Contact = () => {
                 </p>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                    <a href="mailto:hello@example.com" className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-6 py-3 rounded-md font-bold transition-all w-full md:w-auto justify-center">
+                    <a href="mailto:2383758@brunel.ac.uk" className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-6 py-3 rounded-md font-bold transition-all w-full md:w-auto justify-center">
                         <Mail className="w-4 h-4" />
-                        hello@example.com
+                        2383758@brunel.ac.uk
                     </a>
                     <div className="flex gap-4">
-                        <a href="#" className="p-3 bg-slate-800 text-slate-400 hover:text-white rounded-md transition-colors" aria-label="GitHub">
+                        <a href="https://github.com/shahaman098" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-800 text-slate-400 hover:text-white rounded-md transition-colors" aria-label="GitHub">
                             <Github className="w-5 h-5" />
                         </a>
-                        <a href="#" className="p-3 bg-slate-800 text-slate-400 hover:text-white rounded-md transition-colors" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/amansahcode/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-800 text-slate-400 hover:text-white rounded-md transition-colors" aria-label="LinkedIn">
                             <Linkedin className="w-5 h-5" />
                         </a>
-                        <a href="#" className="p-3 bg-slate-800 text-slate-400 hover:text-white rounded-md transition-colors flex items-center gap-2 group" aria-label="Resume">
+                        <a href="/Kris_Aman-Kumar-Sah_CV.pdf" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-800 text-slate-400 hover:text-white rounded-md transition-colors flex items-center gap-2 group" aria-label="Download CV">
                             <FileText className="w-5 h-5" />
-                            <span className="text-sm font-medium hidden group-hover:inline-block">Resume</span>
+                            <span className="text-sm font-medium hidden group-hover:inline-block">Download CV</span>
                         </a>
                     </div>
                 </div>

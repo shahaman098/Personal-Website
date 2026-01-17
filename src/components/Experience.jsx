@@ -4,22 +4,26 @@ import { motion } from 'framer-motion';
 const experience = [
     {
         role: "Cloud & Systems Engineer",
-        company: "Freelance / Independent",
+        company: "Freelance",
         period: "2023 — Present",
-        details: [
-            "Architected and deployed secure cloud infrastructure for small business clients.",
-            "Maintained Linux VPS environments, performing regular security patches and automation.",
-            "Developed custom Python scripts to automate data backups and system monitoring."
+        items: [
+            {
+                context: "Small business clients required secure, cost-effective hosting infrastructure.",
+                action: "Architected and managed Linux VPS environments (Ubuntu/Debian). Automated security patching and data backups using Python and Cron.",
+                result: "Delivered 99.9% uptime for client sites and reduced hosting costs by 40% vs managed solutions."
+            }
         ]
     },
     {
-        role: "Technical Builder & Participant",
-        company: "Various Hackathons",
+        role: "Hackathon Lead & Technical Builder",
+        company: "Various Events",
         period: "2022 — 2024",
-        details: [
-            "Prototyped full-stack applications under strictly time-boxed conditions.",
-            "Led technical implementation for diverse teams of 3-5 members.",
-            "Demonstrated working MVPs to judges and industry panels."
+        items: [
+            {
+                context: "Competed in high-pressure 24/48-hour development sprints against university teams.",
+                action: "Led technical implementation and architecture decisions. Rapidly prototyped MVPs using React and Node.js.",
+                result: "Consistent finalist placement. Successfully shipped 5+ functional demos."
+            }
         ]
     }
 ];
@@ -33,24 +37,36 @@ const Experience = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="text-sm font-mono text-emerald-400 mb-12 uppercase tracking-widest">Experience</h2>
+                <h2 className="text-sm font-mono text-emerald-400 mb-12 uppercase tracking-widest">Experience (STAR)</h2>
 
-                <div className="space-y-12">
+                <div className="space-y-16">
                     {experience.map((job, index) => (
-                        <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-10">
-                            <div className="md:w-1/4">
-                                <div className="font-mono text-slate-500 text-sm whitespace-nowrap">{job.period}</div>
+                        <div key={index} className="relative border-l border-slate-700 pl-8 ml-2">
+                            <span className="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-slate-700 border border-slate-900"></span>
+
+                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-6">
+                                <h3 className="text-xl font-bold text-white">{job.role}</h3>
+                                <div className="text-slate-500 font-mono text-sm">{job.period}</div>
                             </div>
-                            <div className="md:w-3/4">
-                                <h3 className="text-lg font-bold text-white mb-1">{job.role}</h3>
-                                <div className="text-emerald-400 text-sm mb-4">{job.company}</div>
-                                <ul className="space-y-2">
-                                    {job.details.map((item, i) => (
-                                        <li key={i} className="text-slate-400 text-sm leading-relaxed pl-4 border-l border-slate-700">
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="text-emerald-400 text-sm font-medium mb-6 uppercase tracking-wider">{job.company}</div>
+
+                            <div className="space-y-8">
+                                {job.items.map((item, i) => (
+                                    <div key={i} className="bg-slate-800/20 p-5 rounded border border-slate-800/50">
+                                        <div className="mb-3">
+                                            <span className="text-xs font-bold text-slate-500 uppercase">Context</span>
+                                            <p className="text-slate-300 text-sm mt-1">{item.context}</p>
+                                        </div>
+                                        <div className="mb-3">
+                                            <span className="text-xs font-bold text-slate-500 uppercase">Action</span>
+                                            <p className="text-slate-300 text-sm mt-1">{item.action}</p>
+                                        </div>
+                                        <div>
+                                            <span className="text-xs font-bold text-slate-500 uppercase">Result</span>
+                                            <p className="text-emerald-300 text-sm font-medium mt-1">{item.result}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     ))}

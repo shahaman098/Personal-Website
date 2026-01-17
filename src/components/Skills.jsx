@@ -2,10 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = {
-    "Cloud & Infrastructure": ["Linux Administration", "Docker", "AWS (EC2, S3)", "Nginx", "Bash Scripting"],
-    "Web & Platforms": ["React", "Next.js", "Tailwind CSS", "Node.js", "REST APIs"],
-    "Automation & Data": ["Python", "Git", "CI/CD Protocols", "SQL", "System Monitoring"],
-    "Tools & Workflow": ["VS Code", "Postman", "Figma", "Jira", "Technical Writing"]
+    "Cloud & Infrastructure": ["Linux Administration", "Docker", "AWS", "Nginx", "System Hardening"],
+    "Web Systems": ["React", "Next.js", "Tailwind CSS", "Node.js", "Performance Optimization"],
+    "Automation & Data": ["Python", "Bash Scripting", "Cron", "SQL", "Git Workflows"],
+    "AI & Developer Tools": ["LangChain", "OpenAI API", "VS Code", "Postman", "Figma"],
+    "Collaboration & Delivery": ["Agile/Scrum", "Technical Documentation", "CI/CD Protocols", "Jira"]
 };
 
 const Skills = () => {
