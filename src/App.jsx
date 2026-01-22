@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
+import Skills from './components/Skills';
 import Contact from './components/Contact';
+import Now from './components/Now';
 
 function App() {
   // Smooth scroll behavior for anchor links
@@ -33,8 +36,38 @@ function App() {
 
       <main>
         <Hero />
+        <Now />
+
+        {/* Narrative Break 1 */}
+        <section className="py-24 px-6 max-w-2xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed"
+          >
+            "Systems should be boring. <br className="hidden md:block" />
+            The innovation is in the reliability."
+          </motion.p>
+        </section>
+
         <About />
         <Projects />
+
+        {/* Narrative Break 2 */}
+        <section className="py-24 px-6 max-w-2xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed"
+          >
+            "Code is liability. Value is functionality."
+          </motion.p>
+        </section>
+
         <Experience />
         <Skills />
         <Contact />

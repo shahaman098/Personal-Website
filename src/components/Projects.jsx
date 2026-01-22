@@ -12,7 +12,8 @@ const projects = [
       "Built a React frontend for real-time interaction.",
     ],
     result: "Secured 1st Place. Demoed a functional MVP to 200+ attendees.",
-    proof: "Private repo — available on request (Live demo recording available)"
+    proof: "Private repo — available on request (Live demo recording available)",
+    insight: "Optimized vector search latency to <200ms."
   },
   {
     category: "Infrastructure & Systems",
@@ -24,7 +25,8 @@ const projects = [
       "Containerized core services using Docker for consistency.",
     ],
     result: "Reduced deployment time from 2 hours to 10 minutes per instance. Zero security incidents.",
-    proof: "Private repo — available on request"
+    proof: "Private repo — available on request",
+    insight: "Idempotent Ansible playbooks ensure consistency."
   },
   {
     category: "Web Platforms",
@@ -36,7 +38,8 @@ const projects = [
       "Optimized database queries for peak load performance.",
     ],
     result: "Successfully handled 500+ users without downtime.",
-    proof: "deployed-site-example.com (Client Proprietary)"
+    proof: "deployed-site-example.com (Client Proprietary)",
+    insight: "Implemented redis caching for high-read endpoints."
   },
   {
     category: "Experiments & Demos",
@@ -48,7 +51,8 @@ const projects = [
       "Optimized React state management to prevent re-renders.",
     ],
     result: "Achieved 60fps rendering with 10k+ data points.",
-    proof: "https://github.com/shahaman098/data-viz-demo (Open Source)"
+    proof: "https://github.com/shahaman098/data-viz-demo (Open Source)",
+    insight: "Used Canvas API over SVG for performance with >1k nodes."
   }
 ];
 
@@ -65,13 +69,25 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-slate-800/20 border border-slate-800 p-6 rounded-lg hover:border-slate-600 transition-colors">
-              <div className="mb-4">
-                <span className="text-xs font-mono text-emerald-400 border border-emerald-900 bg-emerald-900/20 px-2 py-1 rounded">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="bg-slate-800/20 border border-slate-800 p-6 rounded-lg hover:border-slate-600 hover:bg-slate-800/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <span className="text-xs font-mono text-emerald-400 border border-emerald-900 bg-emerald-900/20 px-2 py-1 rounded w-fit">
                   {project.category}
                 </span>
+                {project.insight && (
+                  <span className="text-xs font-medium text-slate-500 italic">
+                    Details: {project.insight}
+                  </span>
+                )}
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-300 transition-colors">
                 {project.title}
               </h3>
 
@@ -102,7 +118,7 @@ const Projects = () => {
                   <span className="text-sm font-mono text-slate-400 break-all">{project.proof}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
